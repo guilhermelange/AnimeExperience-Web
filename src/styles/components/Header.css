@@ -6,7 +6,6 @@ header {
     right: 0;
     height: 70px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 30px;
     background: transparent;
@@ -18,7 +17,10 @@ header.black {
 }
 
 .header--logo {
+    position: absolute;
+    top: 20%;
     height: 25px;
+
 }
 
 .header--logo img {
@@ -31,10 +33,37 @@ header.black {
 
 .header--user img {
     height: 100%;
-    border-radius: 3px;
 }
 
-.favoritar {
+.header--info{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-left: 68%;
+    top: 20%;
     display: flex;
-    flex-direction: row;
+    
+}
+
+.buttonsHeader {
+    display: flex;
+    margin-right: 2rem;
+}
+
+.buttonsHeader button{
+    align-items: center;
+    display: flex;
+    margin-right: 2rem;
+    border: none;
+    background: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.buttonsHeader img {
+    margin-right: 0.5rem;
+}
+
+.favHeader{
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(152deg) brightness(103%) contrast(103%);
 }

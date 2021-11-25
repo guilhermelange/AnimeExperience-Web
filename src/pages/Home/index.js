@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 import MovieRow from "../../components/MovieRow"
+import FeaturedList from "../../components/FeaturedList"
 import Footer from "../../components/Footer"
 import FeaturedMovie from "../../components/FeaturedMovie";
 import Header from "../../components/Header";
@@ -16,6 +17,7 @@ const Home = () => {
   const [featuredData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
 
+
   useEffect(() => {
     const loadAll = async () => {
       const responsedata = await api.get('animes');
@@ -29,9 +31,11 @@ const Home = () => {
 
       setMovieList(listAnimes);
       setFeaturedData(jsonAnime);
+      console.log(jsonAnime);
     }
 
     loadAll();
+
   }, []);
 
   useEffect(() => {
@@ -54,9 +58,16 @@ const Home = () => {
 
       <Header black={blackHeader} />
 
-      {featuredData &&
-        <FeaturedMovie item={featuredData} />
-      }
+      <div className="mainFeatured">
+        {featuredData &&
+          <FeaturedMovie item={featuredData} />
+        }
+        {movieList.map((item) => (
+          <FeaturedList items={item.items} />
+        ))}
+      </div>
+
+
 
       <section className="lists">
         {movieList.map((item, key) => (

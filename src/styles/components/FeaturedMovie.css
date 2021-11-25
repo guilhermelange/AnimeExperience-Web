@@ -1,32 +1,75 @@
+.mainFeatured{
+    display: flex;
+    flex-direction: row;
+}
+
+.featured-options{
+    border-radius: 5px;
+    margin: 8rem 0rem 15rem 2rem;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70vw;
+}
+
+.featured-options h1{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.option {
+    opacity: 0.5;
+    border-radius: 5px;
+    height: 10vh;
+    width: 20vw;
+
+    transform: scale(1);
+    transition: all ease 0.2s;
+}
+
+.option:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+
 .featured {
-    height: 100vh;
+    border-radius: 5px;
+    margin: 8rem 0rem 15rem 2rem;
+    height: 50vh;
+    width: 70vw;
+    transform: scale(1);
+    transition: all ease 0.2s;
+}
+
+.featured:hover{
+    transform: scale(1.02);
 }
 
 .featured--vertical {
     width: inherit;
     height: inherit;
-    background: linear-gradient(to top, #111 10%, transparent 90%);
+    background: linear-gradient(to top, #111 10%, transparent 150%);
 }
 
 .featured--horizontal {
     width: inherit;
     height: inherit;
-    background: linear-gradient(to right, #111 30%, transparent 70%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     padding-left: 3rem;
-    padding-bottom: 15rem;
-    padding-top: 10rem;
+    padding-top: 8rem;
 }
 
 .featured--name {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
 .featured--info {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-top: 1rem;
 }
@@ -44,7 +87,7 @@
 
 .featured--description {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #999;
     max-width: 40%;
 }
@@ -52,15 +95,17 @@
 .featured--buttons {
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .featured--watchbutton, 
 .featured--mylistbutton {
-    width: 10rem;
+    width: 8rem;
+    height: 3rem;
     display: flex;
+    align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     padding: 0.8rem 1.2rem;
     border-radius: 5px;
@@ -79,21 +124,22 @@
 
 .featured--watchbutton:hover, 
 .featured--mylistbutton:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .featured--watchbutton {
-    background-color: #FFF;
+    background-color: #55EAEA;
     color: #000;
 }
 
 .featured--mylistbutton {
-    background-color: #333;
-    color: #FFF;
+    background-color: #FFF;
+    color: #000;
 }
 
+
 .featured--mylistbutton:hover {
-    color: #FFF;
+    color: #000000;
 }
 
 .featured--watchbutton:hover {

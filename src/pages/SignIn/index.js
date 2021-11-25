@@ -29,7 +29,7 @@ const SignIn = () => {
       }
     }
   };
-  
+
   const handleFailureGoogle = result => {
     console.log(GOOGLE_CLIENT_ID)
     console.log(result)
@@ -37,22 +37,25 @@ const SignIn = () => {
   }
 
   const handleLoginGoogle = async googleData => {
-    const {profileObj:{email, givenName, familyName, googleId:password, imageUrl:avatar}} = googleData;
+    const { profileObj: { email, givenName, familyName, googleId: password, imageUrl: avatar } } = googleData;
     const name = `${givenName} ${familyName}`.trim();
     try {
       await api.post("/users", { name, email, password, avatar });
     } catch {
       console.log('SignUp already registered');
     }
-    
+
     try {
-      const response = await api.post("/sessions", { email, password, google: true});
+      const response = await api.post("/sessions", { email, password, google: true });
       login(response.data.token);
       navigate('/');
+      localStorage.setItem("EMAIL_USER", email);
+      localStorage.setItem("AVATAR_USER", avatar);
+      localStorage.setItem("NAME_USER", name);
+
     } catch (error) {
       Swal.fire(SwalError('Erro ao logar!.', 'Confirmar'));
     }
-
 
   }
 
@@ -102,7 +105,7 @@ const SignIn = () => {
                 onFailure={handleFailureGoogle}
                 cookiePolicy={'single_host_origin'}
               />
-              
+
 
               <hr />
               <Link className="createAccount" to="/signup">Criar conta grátis</Link>
