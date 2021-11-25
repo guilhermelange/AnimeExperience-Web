@@ -1,5 +1,5 @@
 export const TOKEN_KEY = "anex_token";
-export const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '401181561372-e11nsnhbi7p6kvhpcn04qcnfett035uj.apps.googleusercontent.com';
+export const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 export const isAuthenticated = () => localStorage.getItem(TOKEN_KEY) !== null;
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
 export const login = token => {
