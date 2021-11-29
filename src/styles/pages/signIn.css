@@ -97,7 +97,8 @@ main{
 }
 
 .googleButton{
-  width: 20rem;
+  /* width: 20rem; */
+  width: 100%;
   border-radius: 5px;
   font-weight: 500;
   color: #f8f8f8;
@@ -126,5 +127,16 @@ main{
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: #55EAEA !important;
   border: 0;
-  width: 20rem;
+  /* width: 20rem; */
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+
+  .main-content {
+    max-width: 300px;
+  }
 }
